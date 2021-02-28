@@ -1,1 +1,7 @@
 Hello Typed Actors
+
+--> Praised for bringing compile type checks to Actors and a whole new Actor API.
+Characteristics:
+-> Message that an actor receive will be reflected in the type of the actor itself, so the type of actorRef will be both
+    the reason for compiler to yell at us, if we don't send messages of the right type and also an indication to the user of
+    the actor about what this actor actually does.
