@@ -41,5 +41,6 @@ object Example1 extends App {
     "simpleshoppingactor"
   )
   //shoppingRootActor ! "HelloActor" //compile time error: yeah yeah, cool
+
   shoppingRootActor ! ValidateCart //works
 }
