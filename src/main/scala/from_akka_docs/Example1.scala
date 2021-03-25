@@ -29,7 +29,8 @@ object HelloWorld {
     }
 
     private def bot(greetingCounter: Int, max: Int): Behavior[HelloWorld.Greeted] = {
-      Behaviors.receive { (context, message) =>
+      Behaviors.receive {
+        (context, message) =>
         Thread.sleep(1000)
          println(context.self.path) // ==> akka://ActorSystemName/user/World
          val n = greetingCounter + 1
@@ -51,9 +52,9 @@ object HelloWorld {
       //spawn a user guardian actor
       Behaviors.setup(context => {
         println(context.self.path) // ==> akka://ActorSystemName/user
-        val greeter = context.spawn(HelloWorld(), "greeter")
+        val greeter: ActorRef[HelloWorld.Greet] = context.spawn(HelloWorld(), "greeter")
         Behaviors.receiveMessage({ message =>
-          val replyTo = context.spawn(HelloWorldBot(max = 1), message.name)
+          val replyTo: ActorRef[HelloWorld.Greeted] = context.spawn(HelloWorldBot(max = 2), message.name)
           greeter ! HelloWorld.Greet(message.name, replyTo)
           Behaviors.same
         })
