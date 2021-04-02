@@ -33,7 +33,7 @@ object HandleErrorSignal {
 
     def apply(id: String): Behavior[Command] =
       EventSourcedBehavior[Command, Event, State](
-        persistenceId = PersistenceId.ofUniqueId(id),
+        persistenceId = PersistenceId.ofUniqueId("e719016b-7f8b-4022-92c4-1f4e3919f02a"),
         emptyState = State(Nil),
         //the current State and the incoming Command.
         //commandHandler = (state, cmd) => throw new NotImplementedError("TODO: process the command & return an Effect"),
@@ -88,12 +88,16 @@ object HandleErrorSignal {
     }
   }
 
-  val config = ConfigFactory.load().getConfig("postgresStore")
-  val as = ActorSystem(UserGuardian("firsttypedpersistenceexample"), "pas", config)
+  val config = ConfigFactory.load().getConfig("localStore")
+  val as = ActorSystem(UserGuardian("abc"), "pas", config)
 
   import PersistentDomain._
 
- as ! Add("one")
+ //as ! Add("one")
+// as ! Add("two")
+
 
 
 }
+
+

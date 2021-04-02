@@ -10,9 +10,10 @@ libraryDependencies ++= Seq (
   "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
   "com.typesafe.akka" %% "akka-persistence-typed" % AkkaVersion,
   "com.typesafe.akka" %% "akka-persistence-testkit" % AkkaVersion % Test,
-  "com.github.dnvriend" %% "akka-persistence-jdbc" % "3.5.3",
-  "org.postgresql" % "postgresql" % "42.2.19",
-  "org.iq80.leveldb" % "leveldb" % "0.12",
-  "org.fusesource.leveldbjni" % "leveldbjni-all" % "1.8"
 
+  "org.iq80.leveldb" % "leveldb" % "0.12",
+  "org.fusesource.leveldbjni" % "leveldbjni-all" % "1.8",
+
+  "com.typesafe.akka" %% "akka-slf4j" % AkkaVersion,
+  "ch.qos.logback" % "logback-classic" % "1.2.3"
 )

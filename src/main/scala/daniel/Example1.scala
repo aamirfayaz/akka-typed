@@ -70,6 +70,10 @@ object Example2 extends App {
             items -= item
           case ValidateCart =>
              println(" The Card is good")
+            context.log.info("logging from context....")
+            context.log.info(context.self.toString)
+            context.log.info(context.self.path.toString)
+            context.log.info(context.self.path.name)
             println(s"address : ${context.self.path}")/** akka://simpleshoppingactor/user */
         }
         Behaviors.same
