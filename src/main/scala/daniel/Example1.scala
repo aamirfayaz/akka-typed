@@ -2,6 +2,7 @@ package daniel
 
 import akka.actor.typed.{ActorRef, ActorSystem, Behavior}
 import akka.actor.typed.scaladsl.Behaviors
+import com.typesafe.config.ConfigFactory
 
 object Example1 extends App {
 
@@ -39,7 +40,8 @@ object Example1 extends App {
       }
       Behaviors.same
     },
-    "simpleshoppingactor"
+    "simpleshoppingactor",
+    ConfigFactory.load().getConfig("postgresStore")
   )
   //shoppingRootActor ! "HelloActor" //compile time error: yeah yeah, cool
 
