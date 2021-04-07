@@ -23,11 +23,6 @@ object Program1 extends App {
  }
 
 
-object HandleErrorSignal {
-
-
-  }
-
   object MyPersistentBehavior {
    import PersistentDomain._
 
