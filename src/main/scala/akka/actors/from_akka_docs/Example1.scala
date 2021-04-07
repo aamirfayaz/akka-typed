@@ -1,4 +1,4 @@
-package from_akka_docs
+package akka.actors.from_akka_docs
 
 import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.{ActorRef, ActorSystem, Behavior}

@@ -1,4 +1,4 @@
-package daniel
+package akka.actors.daniel
 
 import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.ActorSystem

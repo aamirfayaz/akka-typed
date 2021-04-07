@@ -10,6 +10,7 @@ libraryDependencies ++= Seq (
   "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
   "com.typesafe.akka" %% "akka-persistence-typed" % AkkaVersion,
   "com.typesafe.akka" %% "akka-persistence-testkit" % AkkaVersion % Test,
+  "com.typesafe.akka" %% "akka-cluster-sharding-typed" % AkkaVersion,
 
   "org.iq80.leveldb" % "leveldb" % "0.12",
   "org.fusesource.leveldbjni" % "leveldbjni-all" % "1.8",
